@@ -1,0 +1,136 @@
+{
+	"info": {
+		"_postman_id": "e920c8d1-facf-4f52-add1-a209af311ee7",
+		"name": "1-PRUEBA_TECNICA",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "4977998",
+		"_collection_link": "https://gold-shadow-683992.postman.co/workspace/My-Workspace~fb057749-7d3e-40b1-8e52-dc4e0db6e6ac/collection/4977998-e920c8d1-facf-4f52-add1-a209af311ee7?action=share&source=collection_link&creator=4977998"
+	},
+	"item": [
+		{
+			"name": "Usuario",
+			"item": [
+				{
+					"name": "1-Registro",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"elkinperalta3@gmail.com\",\n  \"password\": \"12345678\",\n  \"rol\": \"PROVEEDOR\",\n  \"nombre\": \"ELKIN PERALTA\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost/prueba_tecnica/api/auth/register"
+					},
+					"response": []
+				},
+				{
+					"name": "2-login",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "3-Refrescar Token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user_id\":\"3\",\n    \"refresh_token\": \"0be5fc50ef3883dc21fd283ff31a062216ab3fc7f4df5d2c72a2b42962eb7e38\"\n}   ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost/prueba_tecnica/api/auth/refresh"
+					},
+					"response": []
+				},
+				{
+					"name": "4- Revocar Token",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0L3BydWViYV90ZWNuaWNhLyIsImF1ZCI6Imh0dHA6Ly9sb2NhbGhvc3QvcHJ1ZWJhX3RlY25pY2EiLCJpYXQiOjE3NTU4MzMwMzQsIm5iZiI6MTc1NTgzMzAzNCwiZXhwIjoxNzU1ODMzOTM0LCJzdWIiOiIzIiwicm9sZSI6IlBST1ZFRURPUiIsImVtYWlsIjoiZWxraW5wZXJhbHRhM0BnbWFpbC5jb20ifQ.qwra5cExxO2sYACsNKymogcH_1UTq_cU34oNXRdhWkE"
+							}
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0L3BydWViYV90ZWNuaWNhLyIsImF1ZCI6Imh0dHA6Ly9sb2NhbGhvc3QvcHJ1ZWJhX3RlY25pY2EiLCJpYXQiOjE3NTU4Mjk4MjQsIm5iZiI6MTc1NTgyOTgyNCwiZXhwIjoxNzU1ODMwNzI0LCJzdWIiOiIzIiwicm9sZSI6IlBST1ZFRURPUiIsImVtYWlsIjoiZWxraW5wZXJhbHRhM0BnbWFpbC5jb20ifQ.gQfg9YllQd8OrqCWnOY7JwKj9IuMsoz7K8RE5mEY8vo",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": "http://localhost/prueba_tecnica/api/auth/logout-all"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Funcionalidades",
+			"item": [
+				{
+					"name": "1-solicitudes_crear",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0L3BydWViYV90ZWNuaWNhLyIsImF1ZCI6Imh0dHA6Ly9sb2NhbGhvc3QvcHJ1ZWJhX3RlY25pY2EiLCJpYXQiOjE3NTU4MzQ5OTUsIm5iZiI6MTc1NTgzNDk5NSwiZXhwIjoxNzU1ODM1ODk1LCJzdWIiOiIzIiwicm9sZSI6IlBST1ZFRURPUiIsImVtYWlsIjoiZWxraW5wZXJhbHRhM0BnbWFpbC5jb20ifQ.Yfbdm5wUSU6rkIcNFH6_8u4RfWnCuuCiEcJntqJWciw"
+							}
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer Token ",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"descripcion\": \"Solicitud de papelería\",\n  \"producto\": \"Cuadernos\",\n  \"cantidad\": 50,\n  \"unidad\": \"unidad\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost/prueba_tecnica/api/solicitudes/crear"
+					},
+					"response": []
+				},
+				{
+					"name": "2-solicitudes-listar",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
